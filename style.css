@@ -3,7 +3,7 @@
    Dark · Creative · Iconic
 =================================== */
 :root {
-  --bg: #050508;
+  --bg: #080805;
   --bg2: #0d0d14;
   --bg3: #12121c;
   --text: #eeeef5;
@@ -1011,6 +1011,7 @@ footer {
 @media (max-width: 768px) {
   #nav {
     padding: 1rem 1.5rem;
+    overflow: visible;
   }
   .hamburger {
     display: flex;
@@ -1018,25 +1019,35 @@ footer {
 
   .nav-links {
     display: none !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(5, 5, 8, 0.98);
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    right: 1rem;
+    left: auto;
+    width: min(280px, calc(100vw - 2rem));
+    background: linear-gradient(
+      180deg,
+      rgba(12, 12, 18, 0.58) 0%,
+      rgba(6, 6, 10, 0.5) 100%
+    );
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
     z-index: 550;
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    backdrop-filter: blur(18px) saturate(140%);
   }
   .nav-links.open {
     display: flex !important;
   }
   .nav-link {
-    font-size: 1.4rem;
-    letter-spacing: 0.2em;
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    text-align: right;
   }
 
   section {
